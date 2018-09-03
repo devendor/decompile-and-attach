@@ -3,10 +3,10 @@ Decompile and Attach
 
 A plugin for IntelliJ java ides to allow bulk decompile of jars decompiler embedded in their IDEs.
 
-:Original Author: `Babur`_:
-:Forked from: `babur/decompile-and-attach`_:
-:Maintained by: `rferguson`_:
-:Version: 1.8:
+:Original Author: `Babur`_
+:Forked from: `babur/decompile-and-attach`_
+:Maintained by: `rferguson`_
+:Version: 1.8
 
 Details
 -------
