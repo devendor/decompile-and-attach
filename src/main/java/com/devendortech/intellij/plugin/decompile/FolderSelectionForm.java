@@ -1,4 +1,4 @@
-package io.gulp.intellij.plugin.decompile;
+package com.devendortech.intellij.plugin.decompile;
 
 import com.intellij.ide.util.BrowseFilesListener;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
