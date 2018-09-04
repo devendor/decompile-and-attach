@@ -22,8 +22,11 @@ intellij {
 }
 patchPluginXml {
     // Pulled from rendored .rst
-
     changeNotes """
+    <strong>1.8.1 rferguson 09/04/2018</strong>
+    <ul class="simple">
+    <li>Documentation is prettier.</li>
+    </ul>
     <p><strong>1.8 rferguson 09/03/2018</strong></p>
     <ul class="simple">
     <li>Moved plugin to com.devendortech namespace.</li>
@@ -73,8 +76,6 @@ patchPluginXml {
     <p><strong>1.1 11/17.2015</strong></p>
     <ul class="simple">
     <li>fixes</li>
-    </ul>
-    </div>"""
-
+    </ul>"""
 
 }

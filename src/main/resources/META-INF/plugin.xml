@@ -4,23 +4,8 @@
     <vendor email="ray.ferguson@devendortech.com" url="https://www.devendortech.com">Devendor Tech LLC</vendor>
 
     <description><![CDATA[
-    A plugin for  IntelliJ java ides to allow bulk decompile of jars.
-    </br>
-    <table class="field-list table" frame="void" rules="none" border="0">
-    <colgroup><col class="field-name">
-    <col class="field-body">
-    </colgroup><tbody valign="top">
-    <tr class="field-odd field"><th class="field-name">Creator:</th><td class="field-body"><a class="reference external" href="https://github.com/bduisenov">Babur</a></td>
-    </tr>
-    <tr class="field-even field"><th class="field-name">Upstream:</th><td class="field-body"><a class="reference external" href="https://github.com/bduisenov/decompile-and-attach">babur/decompile-and-attach</a></td>
-    </tr>
-    <tr class="field-odd field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/devendor">rferguson</a></td>
-    </tr>
-    <tr class="field-odd field"><th class="field-name">Links:</th><td class="field-body"><a class="reference external" href="https://github.com/devendor/decompile-and-attach">Source</a> | <a class="reference external" href="https://plugins.jetbrains.com/plugin/11094-decompile-and-attach">Distribution</a> | <a class="reference external" href="https://github.com/devendor/decompile-and-attach/issues">Issues</a> | <a class="reference external" href="https://www.devendortech.com/articles/decompile.html">Devendor Tech</a></td>
-    </tr>
-    </tbody>
-    </table>
-    <div class="section" id="details">
+    <p>A plugin for  IntelliJ java ides to allow bulk decompile of jars.</strong></p>
+    <p><a class="reference external" href="https://github.com/devendor/decompile-and-attach">Source</a> | <a class="reference external" href="https://plugins.jetbrains.com/plugin/11094-decompile-and-attach">Distribution</a> | <a class="reference external" href="https://github.com/devendor/decompile-and-attach/issues">Issues</a> | <a class="reference external" href="https://www.devendortech.com/articles/decompile.html">Documentation</a></p>
     <p>A rework of the original decompile and attach plugin for IntelliJ IDEA provided by
     <a class="reference external" href="https://github.com/bduisenov">Babur</a> for compatibility with current versions of IntelliJ idea.</p>
     <p>Decompile and attach decompiles jar packages using Intellij’s Fernflower decompiler

@@ -6,7 +6,7 @@ IntelliJ java IDE plugin for bulk decompile of jars.
 :Creator: `Babur`_
 :Upstream: `babur/decompile-and-attach`_
 :Maintainer: `rferguson`_
-:Links: `Source`_ | `Distribution`_ | `Issues`_ | `Devendor Tech`_
+:Links: `Source`_ | `Distribution`_ | `Issues`_ | `Documentation`_
 
 Details
 -------
@@ -28,6 +28,9 @@ Don't expect perfection. It's a good decompiler, but can't reproduce original so
 Changlog
 --------
 
+**1.8.1 rferguson 09/04/2018**
+
+* Documentation is prettier.
 
 **1.8 rferguson 09/03/2018**
 
@@ -88,4 +91,4 @@ Changlog
 .. _Distribution: https://plugins.jetbrains.com/plugin/11094-decompile-and-attach
 .. _Issues: https://github.com/devendor/decompile-and-attach/issues
 .. _Babur's github issues: https://github.com/bduisenov/decompile-and-attach/issues
-.. _Devendor Tech: https://www.devendortech.com/articles/decompile.html
+.. _Documentation: https://www.devendortech.com/articles/decompile.html
