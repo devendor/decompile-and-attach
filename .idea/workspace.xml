@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc833d58-d827-49df-9e25-cbb866178f0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devendortech/intellij/plugin/decompile/DecompileAndAttachAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devendortech/intellij/plugin/decompile/DecompileAndAttachAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devendortech/intellij/plugin/decompile/FolderSelectionForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devendortech/intellij/plugin/decompile/FolderSelectionForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/devendortech/intellij/plugin/decompile/FolderSelectionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/devendortech/intellij/plugin/decompile/FolderSelectionForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -67,47 +52,13 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="decompileandattach" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="decompileandattach" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="decompileandattach" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="decompileandattach" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build setup" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="decompileandattach" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="help" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="decompileandattach" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="intellij" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="decompileandattach" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="decompileandattach" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -197,7 +148,7 @@
     <session id="-465856980">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.17" value="2" />
@@ -221,14 +172,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gradle" value="73" />
+          <entry key="gradle" value="81" />
           <entry key="xml" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="73" />
+          <entry key="Groovy" value="81" />
           <entry key="XML" value="69" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1345244628">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -243,7 +202,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="739">
               <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
             </state>
           </provider>
@@ -792,8 +751,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="4051" />
     <option name="y" value="30" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="2612" />
+    <option name="height" value="1555" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -890,7 +849,7 @@
     <property name="SearchEverywhereHistoryKey" value="build&#9;FILE&#9;file:///home/me/code/merge/decompile-and-attach/build.gradle&#10;fer&#9;FILE&#9;jar:///home/me/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.2.2/e1ebcdb1cf491ef4a36b75168ebb415aab44bd27/ideaIC-2018.2.2-sources.jar!/org/jetbrains/java/decompiler/main/Fernflower.java&#10;fernflower&#9;FILE&#9;jar:///home/me/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.2.2/e1ebcdb1cf491ef4a36b75168ebb415aab44bd27/ideaIC-2018.2.2-sources.jar!/org/jetbrains/java/decompiler/main/Fernflower.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535998898795" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535999447455" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="$USER_HOME$/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1069,36 +1028,37 @@
       <workItem from="1535996126004" duration="35000" />
       <workItem from="1535996180434" duration="88000" />
       <workItem from="1535996293866" duration="38000" />
-      <workItem from="1535996360085" duration="2214000" />
+      <workItem from="1535996360085" duration="3201000" />
+      <workItem from="1536086483799" duration="696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20361000" />
+    <option name="totallyTimeSpent" value="22044000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4051" y="30" width="1920" height="1080" extended-state="0" />
+    <frame x="4051" y="30" width="2612" height="1555" extended-state="0" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Image Layers" order="3" />
-      <window_info x="28" y="752" width="3784" height="648" id="Terminal" order="4" sideWeight="0.5832045" visible="true" weight="0.4833691" />
+      <window_info active="true" x="28" y="752" width="3784" height="648" id="Terminal" order="4" sideWeight="0.5832045" visible="true" weight="0.35250393" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.32900432" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.32880628" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49784017" weight="0.32921174" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" sideWeight="0.49352053" weight="0.0" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5005365" side_tool="true" visible="true" weight="0.32900432" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5005365" side_tool="true" weight="0.32900432" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.3296932" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Build" order="11" weight="0.04761905" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Gradle" order="1" sideWeight="0.4887097" visible="true" weight="0.35729614" />
+      <window_info anchor="right" id="Gradle" order="1" sideWeight="0.48668796" visible="true" weight="0.26408452" />
       <window_info anchor="right" id="Ant Build" order="2" sideWeight="0.4983871" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -1107,7 +1067,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info anchor="right" id="Structure" order="10" sideWeight="0.5112903" side_tool="true" visible="true" weight="0.35729614" />
+      <window_info anchor="right" id="Structure" order="10" sideWeight="0.51331204" side_tool="true" visible="true" weight="0.26408452" />
       <window_info anchor="right" content_ui="combo" id="Project" order="11" sideWeight="0.38870966" weight="0.31866953" />
       <window_info anchor="right" id="Favorites" order="12" side_tool="true" weight="0.2661987" />
     </layout>
@@ -1183,7 +1143,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="739">
           <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
         </state>
       </provider>
