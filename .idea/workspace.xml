@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cc833d58-d827-49df-9e25-cbb866178f0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -13,6 +12,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/decompileandattach$decompileandattach__runIde_.ic" NAME="decompileandattach [runIde] Coverage Results" MODIFIED="1536094093982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -58,7 +60,7 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="decompileandattach" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="intellij" type="c8890929:TasksNode$1" />
+                <item name="other" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -186,38 +188,46 @@
     <session id="1345244628">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.16" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gradle" value="2" />
+          <entry key="rst" value="2" />
+          <entry key="xml" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Groovy" value="2" />
+          <entry key="ReST" value="2" />
+          <entry key="XML" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gradle" value="2147" />
+          <entry key="rst" value="288" />
+          <entry key="xml" value="1543" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Groovy" value="2147" />
+          <entry key="ReST" value="288" />
+          <entry key="XML" value="1543" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.gradle">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="739">
-              <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -460,9 +470,9 @@
       <map>
         <entry key="$PROJECT_DIR$/../.gradle" value="0" />
         <entry key="$PROJECT_DIR$/../build.gradle" value="157516874" />
-        <entry key="$PROJECT_DIR$" value="7679772655000" />
+        <entry key="$PROJECT_DIR$" value="6143873909000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="1216085601" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="1900525830" />
         <entry key="$PROJECT_DIR$/gradle.properties" value="4130087901" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2585518924" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="385305002" />
@@ -731,8 +741,10 @@
         <option value="$PROJECT_DIR$/../build.gradle" />
         <option value="$PROJECT_DIR$/../src/main/java/com/devendortech/intellij/plugin/decompile/DecompileAndAttachAction.java" />
         <option value="$PROJECT_DIR$/../src/main/resources/META-INF/plugin.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/README.rst" />
+        <option value="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
       </list>
     </option>
   </component>
@@ -776,84 +788,17 @@
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="decompileandattach" type="b2602c69:ProjectViewProjectNode" />
-              <item name="decompile-and-attach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="decompileandattach" type="b2602c69:ProjectViewProjectNode" />
-              <item name="decompile-and-attach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="decompileandattach" type="b2602c69:ProjectViewProjectNode" />
-              <item name="decompile-and-attach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="distributions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="decompileandattach" type="b2602c69:ProjectViewProjectNode" />
-              <item name="decompile-and-attach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="decompileandattach" type="b2602c69:ProjectViewProjectNode" />
-              <item name="decompile-and-attach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="decompileandattach" type="b2602c69:ProjectViewProjectNode" />
-              <item name="decompile-and-attach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="decompileandattach" type="b2602c69:ProjectViewProjectNode" />
-              <item name="decompile-and-attach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="decompile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="decompileandattach" type="b2602c69:ProjectViewProjectNode" />
-              <item name="decompile-and-attach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="decompileandattach" type="b2602c69:ProjectViewProjectNode" />
-              <item name="decompile-and-attach" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="build&#9;FILE&#9;file:///home/me/code/merge/decompile-and-attach/build.gradle&#10;fer&#9;FILE&#9;jar:///home/me/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.2.2/e1ebcdb1cf491ef4a36b75168ebb415aab44bd27/ideaIC-2018.2.2-sources.jar!/org/jetbrains/java/decompiler/main/Fernflower.java&#10;fernflower&#9;FILE&#9;jar:///home/me/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.2.2/e1ebcdb1cf491ef4a36b75168ebb415aab44bd27/ideaIC-2018.2.2-sources.jar!/org/jetbrains/java/decompiler/main/Fernflower.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535999447455" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536101836681" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="$USER_HOME$/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -876,7 +821,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.decompile-and-attach [publishPlugin]">
+  <component name="RunManager" selected="Gradle.decompile-and-attach [verifyPlugin]">
     <configuration name="Plugin" type="GradleRunConfiguration" factoryName="Gradle" singleton="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -889,6 +834,25 @@
         <option name="taskNames">
           <list>
             <option value=":runIde" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <extension name="recording" autostart="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="decompile-and-attach [patchPluginXml]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="patchPluginXml" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -915,6 +879,25 @@
       <extension name="recording" autostart="false" />
       <method v="2" />
     </configuration>
+    <configuration name="decompile-and-attach [verifyPlugin]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="verifyPlugin" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <extension name="recording" autostart="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="decompileandattach [buildPlugin]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -927,25 +910,6 @@
         <option name="taskNames">
           <list>
             <option value="buildPlugin" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <extension name="recording" autostart="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="decompileandattach [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -972,40 +936,21 @@
       <extension name="recording" autostart="false" />
       <method v="2" />
     </configuration>
-    <configuration name="decompileandattach [verifyPlugin]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="verifyPlugin" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <extension name="recording" autostart="false" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Gradle.Plugin" />
       <item itemvalue="Gradle.decompileandattach [runIde]" />
       <item itemvalue="Gradle.decompileandattach [buildPlugin]" />
-      <item itemvalue="Gradle.decompileandattach [verifyPlugin]" />
-      <item itemvalue="Gradle.decompileandattach [build]" />
       <item itemvalue="Gradle.decompile-and-attach [publishPlugin]" />
+      <item itemvalue="Gradle.decompile-and-attach [patchPluginXml]" />
+      <item itemvalue="Gradle.decompile-and-attach [verifyPlugin]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.decompile-and-attach [verifyPlugin]" />
+        <item itemvalue="Gradle.decompileandattach [runIde]" />
+        <item itemvalue="Gradle.decompile-and-attach [patchPluginXml]" />
         <item itemvalue="Gradle.decompile-and-attach [publishPlugin]" />
         <item itemvalue="Gradle.decompileandattach [buildPlugin]" />
-        <item itemvalue="Gradle.decompileandattach [runIde]" />
-        <item itemvalue="Gradle.decompileandattach [build]" />
-        <item itemvalue="Gradle.decompileandattach [verifyPlugin]" />
       </list>
     </recent_temporary>
   </component>
@@ -1029,12 +974,16 @@
       <workItem from="1535996180434" duration="88000" />
       <workItem from="1535996293866" duration="38000" />
       <workItem from="1535996360085" duration="3201000" />
-      <workItem from="1536086483799" duration="696000" />
+      <workItem from="1536086483799" duration="11715000" />
+      <workItem from="1536102034312" duration="33000" />
+      <workItem from="1536102370268" duration="190000" />
+      <workItem from="1536102583440" duration="352000" />
+      <workItem from="1536102957311" duration="60000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22044000" />
+    <option name="totallyTimeSpent" value="33698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4051" y="30" width="2612" height="1555" extended-state="0" />
@@ -1043,10 +992,10 @@
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Image Layers" order="3" />
-      <window_info active="true" x="28" y="752" width="3784" height="648" id="Terminal" order="4" sideWeight="0.5832045" visible="true" weight="0.35250393" />
+      <window_info x="28" y="752" width="3784" height="648" id="Terminal" order="4" sideWeight="0.5832045" weight="0.35250393" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.32880628" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946353" weight="0.32880628" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1058,7 +1007,7 @@
       <window_info anchor="bottom" id="Build" order="11" weight="0.04761905" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Gradle" order="1" sideWeight="0.48668796" visible="true" weight="0.26408452" />
+      <window_info anchor="right" id="Gradle" order="1" sideWeight="0.4781987" weight="0.26956183" />
       <window_info anchor="right" id="Ant Build" order="2" sideWeight="0.4983871" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -1067,9 +1016,10 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info anchor="right" id="Structure" order="10" sideWeight="0.51331204" side_tool="true" visible="true" weight="0.26408452" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="11" sideWeight="0.38870966" weight="0.31866953" />
+      <window_info anchor="right" id="Structure" order="10" sideWeight="0.51757187" side_tool="true" weight="0.26408452" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="11" sideWeight="0.37912673" weight="0.31846637" />
       <window_info anchor="right" id="Favorites" order="12" side_tool="true" weight="0.2661987" />
+      <window_info anchor="right" id="Coverage" order="13" sideWeight="0.5218013" side_tool="true" visible="true" weight="0.26408452" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1131,20 +1081,41 @@
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.2.2/e1ebcdb1cf491ef4a36b75168ebb415aab44bd27/ideaIC-2018.2.2-sources.jar!/com/intellij/psi/impl/compiled/ClassFileDecompiler.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/build/distributions/decompileandattach/lib/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="50" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="119">
+          <caret line="7" column="434" selection-start-line="7" selection-start-column="434" selection-end-line="7" selection-end-column="434" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="73" column="25" selection-start-line="73" selection-start-column="25" selection-end-line="73" selection-end-column="25" />
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="66" lean-forward="true" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
         </state>
       </provider>
     </entry>
