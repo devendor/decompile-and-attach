@@ -2,26 +2,34 @@
     <id>com.devendortech.intellij.plugin.decompile</id>
     <name>Decompile And Attach</name>
     <vendor email="ray.ferguson@devendortech.com" url="https://www.devendortech.com">Devendor Tech LLC</vendor>
-    <description><![CDATA[
-    <a href="https://github.com/devendor/decompile-and-attach">GitHub</a> |
-    <a href="https://github.com/devendor/decompile-and-attach/issues">Issues</a> |
-    <br/>
-    Rework of the original decompile and attach plugin for IntelliJ IDEA provided by
-    <a href="https://github.com/bduisenov/decompile-and-attach">Babur</a> for compatibility with
-    current versions of IntelliJ idea.
-    <br/><br/>
-    Decompile and attach decompiles jar packages using Intellij's Fernflower decompiler and attaches decompiled source
-    jars to your project.
-    <br/><br/>
-    The decompiled source is included within Search Scope or can be unpacked and analyzed however you wish.
-    <br/><br/>
-    Select one or more jar files in the project menu. Then right click and select the "Decompile And Attach" action.
-    <br/><br/>
-    Check your event log for warnings. Failure to decompile will log a warning and continue to the next jar.
-    <br/><br/>
-    Don't expect perfection. It's a good decompiler, but can't reproduce original source code.
-    ]]></description>
 
+    <description><![CDATA[
+    A plugin for  IntelliJ java ides to allow bulk decompile of jars.
+    </br>
+    <table class="field-list table" frame="void" rules="none" border="0">
+    <colgroup><col class="field-name">
+    <col class="field-body">
+    </colgroup><tbody valign="top">
+    <tr class="field-odd field"><th class="field-name">Creator:</th><td class="field-body"><a class="reference external" href="https://github.com/bduisenov">Babur</a></td>
+    </tr>
+    <tr class="field-even field"><th class="field-name">Upstream:</th><td class="field-body"><a class="reference external" href="https://github.com/bduisenov/decompile-and-attach">babur/decompile-and-attach</a></td>
+    </tr>
+    <tr class="field-odd field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/devendor">rferguson</a></td>
+    </tr>
+    <tr class="field-odd field"><th class="field-name">Links:</th><td class="field-body"><a class="reference external" href="https://github.com/devendor/decompile-and-attach">Source</a> | <a class="reference external" href="https://plugins.jetbrains.com/plugin/11094-decompile-and-attach">Distribution</a> | <a class="reference external" href="https://github.com/devendor/decompile-and-attach/issues">Issues</a> | <a class="reference external" href="https://www.devendortech.com/articles/decompile.html">Devendor Tech</a></td>
+    </tr>
+    </tbody>
+    </table>
+    <div class="section" id="details">
+    <p>A rework of the original decompile and attach plugin for IntelliJ IDEA provided by
+    <a class="reference external" href="https://github.com/bduisenov">Babur</a> for compatibility with current versions of IntelliJ idea.</p>
+    <p>Decompile and attach decompiles jar packages using Intellij’s Fernflower decompiler
+    and attaches decompiled source jars to your project within intellij java ides.</p>
+    <p>The decompiled source is included within Search Scopes or can be unpacked and analyzed however you wish.</p>
+    <p>Select one or more jar files in the project menu. Then right click and select the “Decompile And Attach” action.</p>
+    <p>Check your event log for warnings. Failure to decompile will log a warning and continue to the next jar.</p>
+    <p>Don’t expect perfection. It’s a good decompiler, but can’t reproduce original source code.</p>
+    ]]></description>
 
     <depends>com.intellij.modules.java</depends>
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
