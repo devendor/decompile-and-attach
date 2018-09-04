@@ -7,7 +7,7 @@ A plugin for IntelliJ java ides to allow bulk decompile of jars decompiler embed
 :Forked from: `babur/decompile-and-attach`_
 :Maintained by: `rferguson`_
 :Version: 1.8
-:Links: `Source`_ | `Distribution`_ | `Issues`_ 
+:Links: `Source`_ | `Distribution`_ | `Issues`_ | `Devendor Tech`_
 
 
 Details
@@ -87,3 +87,4 @@ Changlog
 .. _source: https://github.com/devendor/decompile-and-attach
 .. _Distribution: https://plugins.jetbrains.com/plugin/11094-decompile-and-attach
 .. _Issues: https://github.com/devendor/decompile-and-attach/issues
+.. _Devendor Tech: https://www.devendortech.com/articles/decompile.html
