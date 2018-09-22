@@ -28,6 +28,14 @@ Don't expect perfection. It's a good decompiler, but can't reproduce original so
 Changlog
 --------
 
+**1.8.2 rferguson 09/22/2018**
+
+* Added java-decompiler plugin dependency to build.gradle plugin.xml.
+* BugFix - Prior release would blindly produce empty classes with "{ //compiled content" bodies
+  when decompile and attach was used before any other decompile activity that triggered legal
+  terms acceptance and related key setting. Plugin now reproduced legal disclaimer from java-decompiler
+  when needed and sets acceptance key to fix bug.
+
 **1.8.1 rferguson 09/04/2018**
 
 * Documentation is prettier.

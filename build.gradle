@@ -5,7 +5,7 @@ plugins {
 
 
 group 'com.devendortech.intellij'
-version '1.8.1'
+version '1.8.2'
 
 sourceCompatibility = 1.8
 
@@ -14,12 +14,15 @@ repositories {
 }
 
 dependencies {
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 intellij {
     version '2018.2.2'
+    plugins 'java-decompiler'
 }
+
 patchPluginXml {
     // Pulled from rendored .rst
     changeNotes """

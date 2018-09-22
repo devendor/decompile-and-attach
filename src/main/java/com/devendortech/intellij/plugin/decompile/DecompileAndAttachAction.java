@@ -5,16 +5,14 @@ import static com.google.common.base.Preconditions.checkState;
 import static com.intellij.notification.NotificationType.*;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.jar.JarOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 import com.google.common.base.Strings;
+import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import org.apache.commons.codec.Charsets;
 import org.jetbrains.annotations.NotNull;
 
@@ -45,6 +43,11 @@ import com.intellij.psi.compiled.ClassFileDecompilers;
 import com.intellij.psi.impl.compiled.ClassFileDecompiler;
 import com.intellij.util.CommonProcessors;
 
+import com.intellij.ui.components.LegalNoticeDialog;
+import com.intellij.openapi.ui.DialogWrapper ;
+import com.intellij.ide.plugins.PluginManagerCore ;
+import org.jetbrains.java.decompiler.IdeaDecompilerBundle ;
+
 /**
  * Created by bduisenov on 12/11/15.
  * updated rferguson 12/9/17 and 9/2/18.
@@ -52,8 +55,11 @@ import com.intellij.util.CommonProcessors;
 public class DecompileAndAttachAction extends AnAction {
 
     private static final Logger logger = Logger.getInstance(DecompileAndAttachAction.class);
-
     private final String baseDirProjectSettingsKey = "com.devendortech.intellij.baseDir";
+
+    // From IdeaDecompiler
+    private final String LEGAL_NOTICE_KEY = "decompiler.legal.notice.accepted";
+    private int DECLINE_EXIT_CODE = DialogWrapper.NEXT_USER_EXIT_CODE;
 
     /**
      * show 'decompile and attach' option only for *.jar files
@@ -65,9 +71,9 @@ public class DecompileAndAttachAction extends AnAction {
         presentation.setEnabled(false);
         presentation.setVisible(false);
         VirtualFile virtualFile = e.getData(CommonDataKeys.VIRTUAL_FILE);
-        if (virtualFile != null && //
-                "jar".equals(virtualFile.getExtension()) && //
-                e.getProject() != null) {
+        if (virtualFile != null &&
+            "jar".equals(virtualFile.getExtension()) &&
+             e.getProject() != null) {
             presentation.setEnabled(true);
             presentation.setVisible(true);
         }
@@ -79,6 +85,28 @@ public class DecompileAndAttachAction extends AnAction {
 
         if (project == null) {
             return;
+        }
+
+        if (!PropertiesComponent.getInstance().isValueSet(LEGAL_NOTICE_KEY)){
+            String title = IdeaDecompilerBundle.message("legal.notice.title", "Legal Terms");
+            String message = IdeaDecompilerBundle.message("legal.notice.text");
+            int answer = LegalNoticeDialog.build(title,message)
+                    .withCancelText("Decide Later")
+                    .withCustomAction("Decline and restart", DECLINE_EXIT_CODE)
+                    .show();
+            if (answer == DialogWrapper.OK_EXIT_CODE){
+                PropertiesComponent.getInstance().setValue(LEGAL_NOTICE_KEY, true);
+                logger.info("Decompiler legal notice accepted.");
+            } else if (answer == DECLINE_EXIT_CODE){
+                ApplicationManagerEx.getApplicationEx().restart(true);
+                logger.info("Decompiler legal notice rejected, disabling decompile and attach plugin.");
+                return;
+            } else {
+                new Notification("DecompileAndAttach", "Decompile request rejected",
+                        "Decompiler cannot continue until terms of use are accepted.", INFORMATION )
+                        .notify(project);
+                return;
+            }
         }
 
         final Optional<String> baseDirPath = getBaseDirPath(project);
@@ -114,6 +142,7 @@ public class DecompileAndAttachAction extends AnAction {
 
         }.queue();
     }
+
 
     private Optional<String> getBaseDirPath(Project project) {
         String result = null;
