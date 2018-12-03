@@ -13,34 +13,35 @@ import java.util.zip.ZipOutputStream;
 
 import com.google.common.base.Strings;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
+import com.intellij.openapi.roots.ui.configuration.LibrarySourceRootDetectorUtil;
+
 import org.apache.commons.codec.Charsets;
 import org.jetbrains.annotations.NotNull;
 
-import com.google.common.base.Throwables;
 import com.google.common.collect.Iterables;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.notification.Notification;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.Result;
-import com.intellij.openapi.command.WriteCommandAction;
+
+import static com.intellij.openapi.command.WriteCommandAction.writeCommandAction;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
-import com.intellij.openapi.roots.ui.configuration.PathUIUtils;
+//import com.intellij.openapi.roots.ui.configuration.PathUIUtils;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.compiled.ClassFileDecompilers;
-import com.intellij.psi.impl.compiled.ClassFileDecompiler;
+//import com.intellij.psi.impl.compiled.ClassFileDecompiler;
+import org.jetbrains.java.decompiler.IdeaDecompiler ;
 import com.intellij.util.CommonProcessors;
 
 import com.intellij.ui.components.LegalNoticeDialog;
@@ -55,15 +56,16 @@ import org.jetbrains.java.decompiler.IdeaDecompilerBundle ;
 public class DecompileAndAttachAction extends AnAction {
 
     private static final Logger logger = Logger.getInstance(DecompileAndAttachAction.class);
-    private final String baseDirProjectSettingsKey = "com.devendortech.intellij.baseDir";
+    private static final String baseDirProjectSettingsKey = "com.devendortech.intellij.baseDir";
 
     // From IdeaDecompiler
-    private final String LEGAL_NOTICE_KEY = "decompiler.legal.notice.accepted";
-    private int DECLINE_EXIT_CODE = DialogWrapper.NEXT_USER_EXIT_CODE;
+    private static final String LEGAL_NOTICE_KEY = "decompiler.legal.notice.accepted";
+    private static final int DECLINE_EXIT_CODE = DialogWrapper.NEXT_USER_EXIT_CODE;
+
 
     /**
      * show 'decompile and attach' option only for *.jar files
-     * @param e
+     * @param e AnActionEvent
      */
     @Override
     public void update(AnActionEvent e) {
@@ -98,6 +100,7 @@ public class DecompileAndAttachAction extends AnAction {
                 PropertiesComponent.getInstance().setValue(LEGAL_NOTICE_KEY, true);
                 logger.info("Decompiler legal notice accepted.");
             } else if (answer == DECLINE_EXIT_CODE){
+                PluginManagerCore.disablePlugin("com.devendortech.intellij.plugin.decompile");
                 ApplicationManagerEx.getApplicationEx().restart(true);
                 logger.info("Decompiler legal notice rejected, disabling decompile and attach plugin.");
                 return;
@@ -123,13 +126,7 @@ public class DecompileAndAttachAction extends AnAction {
                     Arrays.asList( sourceVFs ).stream() //
                             .filter( (vf) -> "jar".equals( vf.getExtension() ) ) //
                             .forEach((sourceVF) -> {
-                                try {
-                                    process( project, baseDirPath.get(), sourceVF, indicator,1D / sourceVFs.length );
-                                } catch (Exception e) { // process already logs a warning.
-                                    if (e instanceof ProcessCanceledException) {
-                                        Throwables.propagate( e );
-                                    }
-                                }
+                                process(project, baseDirPath.get(), sourceVF, indicator, 1D / sourceVFs.length);
                             });
 
             indicator.setFraction( 1.0 );
@@ -164,7 +161,7 @@ public class DecompileAndAttachAction extends AnAction {
         JarFileSystem jarFileInstance = JarFileSystem.getInstance();
         VirtualFile jarRoot = jarFileInstance.getJarRootForLocalFile(sourceVF);
         if (jarRoot == null) {
-            jarRoot = jarFileInstance.getJarRootForLocalFile(jarFileInstance.getLocalVirtualFileFor(sourceVF));
+            jarRoot = jarFileInstance.getJarRootForLocalFile(Objects.requireNonNull(jarFileInstance.getLocalVirtualFileFor(sourceVF)));
         }
         try {
             File tmpJarFile = FileUtil.createTempFile("decompiled", "tmp");
@@ -176,21 +173,18 @@ public class DecompileAndAttachAction extends AnAction {
             indicator.setText("Attaching decompiled sources for '" + sourceVF.getName() + "'");
             result.second.forEach((failedFile) -> new Notification("DecompileAndAttach", "Decompilation problem",
                     "fernflower could not decompile class " + failedFile, WARNING).notify(project));
-            File resultJar = copy(project, baseDirPath, sourceVF, tmpJarFile, result.first);
+            File resultJar = copy(baseDirPath, tmpJarFile, result.first);
             attach(project, sourceVF, resultJar);
             indicator.setFraction(indicator.getFraction() + (fractionStep * 30 / 100));
             FileUtil.delete(tmpJarFile);
 
-        } catch (Exception e) {
-            if (!(e instanceof ProcessCanceledException)) {
-                new Notification("DecompileAndAttach", "Jar lib couldn't be decompiled",
-                        sourceVF.getName()+" "+e.getClass().getName()+" "+e.toString(), ERROR).notify(project);
-            }
-            Throwables.propagate(e);
+        } catch (IOException e){
+            new Notification("DecompileAndAttach", "Jar lib couldn't be decompiled",
+                sourceVF.getName() + " " + e.getClass().getName() + " " + e.toString(), ERROR).notify(project);
         }
     }
 
-    private File copy(Project project, String baseDirPath, VirtualFile sourceVF, File tmpJarFile, String filename)
+    private File copy(String baseDirPath, File tmpJarFile, String filename)
             throws IOException {
         String libraryName = filename.replace(".jar", "-sources.jar");
         String fullPath = baseDirPath + File.separator + libraryName;
@@ -209,12 +203,10 @@ public class DecompileAndAttachAction extends AnAction {
             VirtualFile resultJarVF = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(resultJar);
             checkNotNull(resultJarVF, "could not find Virtual File of %s", resultJar.getAbsolutePath());
             VirtualFile resultJarRoot = JarFileSystem.getInstance().getJarRootForLocalFile(resultJarVF);
-            VirtualFile[] roots = PathUIUtils.scanAndSelectDetectedJavaSourceRoots(null,
+            VirtualFile[] roots = LibrarySourceRootDetectorUtil.scanAndSelectDetectedJavaSourceRoots(null,
                     new VirtualFile[] {resultJarRoot});
-            new WriteCommandAction<Void>(project) {
+            writeCommandAction(project).run(() -> {
 
-                @Override
-                protected void run(@NotNull Result<Void> result) throws Throwable {
                     final Module currentModule = ProjectRootManager.getInstance(project).getFileIndex()
                             .getModuleForFile(sourceVF, false);
 
@@ -234,8 +226,7 @@ public class DecompileAndAttachAction extends AnAction {
                         new Notification("DecompileAndAttach", "Failed getModule",
                                 "File is " + sourceVF.getName(), WARNING).notify(project);
                     }
-                }
-            }.execute();
+                });
         } , ModalityState.NON_MODAL);
     }
 
@@ -261,7 +252,7 @@ public class DecompileAndAttachAction extends AnAction {
      * recursively goes through jar archive and decompiles all found classes.
      * in case if decompilation fails on a class, the class name is put to {@code failed} Set
      * and then is returned with result.
-     * @param jarOutputStream
+     * @param jarOutputStream JarOutputStream
      * @return {@code Pair<String, Set<String>>} containing the filename of a library and a set of
      * class names which failed to decompile
      */
@@ -270,9 +261,9 @@ public class DecompileAndAttachAction extends AnAction {
 
             private String initialIndicatorText;
 
-            private ClassFileDecompiler decompiler = new ClassFileDecompiler();
+            private final IdeaDecompiler decompiler = new IdeaDecompiler();
 
-            private Set<String> failed = new HashSet<>();
+            private final Set<String> failed = new HashSet<>();
 
             @Override
             public Pair<String, Set<String>> apply(VirtualFile head) {
@@ -286,9 +277,8 @@ public class DecompileAndAttachAction extends AnAction {
                     logger.debug("#apply({}): returned {}", head, result);
                     return result;
                 } catch (IOException e) {
-                    Throwables.propagate(e);
+                    throw new RuntimeException(e);
                 }
-                return null;
             }
 
             private void process(String relativePath, VirtualFile head, Iterable<VirtualFile> tail, Set<String> writtenPaths)
@@ -296,6 +286,7 @@ public class DecompileAndAttachAction extends AnAction {
                 if (head == null) {
                     return;
                 }
+
 
                 VirtualFile[] children = head.getChildren();
                 if (head.isDirectory()) {
@@ -321,7 +312,7 @@ public class DecompileAndAttachAction extends AnAction {
             private void decompileAndSave(String relativeFilePath, VirtualFile file, Set<String> writternPaths)
                     throws IOException {
                 try {
-                    CharSequence decompiled = decompiler.decompile(file);
+                    CharSequence decompiled = decompiler.getText(file);
                     addFileEntry(jarOutputStream, relativeFilePath, writternPaths, decompiled);
                 } catch (ClassFileDecompilers.Light.CannotDecompileException e) {
                     failed.add(file.getName());
@@ -353,19 +344,16 @@ public class DecompileAndAttachAction extends AnAction {
         if (!writtenPaths.add(relativePath))
             return;
 
-        ByteArrayInputStream fileIS = new ByteArrayInputStream(decompiled.toString().getBytes(Charsets.toCharset("UTF-8")));
-        long size = decompiled.length();
-        ZipEntry e = new ZipEntry(relativePath);
-        if (size == 0) {
-            e.setMethod(ZipEntry.STORED);
-            e.setSize(0);
-            e.setCrc(0);
-        }
-        jarOS.putNextEntry(e);
-        try {
+        try (ByteArrayInputStream fileIS = new ByteArrayInputStream(decompiled.toString().getBytes(Charsets.toCharset("UTF-8")))) {
+            long size = decompiled.length();
+            ZipEntry e = new ZipEntry(relativePath);
+            if (size == 0) {
+                e.setMethod(ZipEntry.STORED);
+                e.setSize(0);
+                e.setCrc(0);
+            }
+            jarOS.putNextEntry(e);
             FileUtil.copy(fileIS, jarOS);
-        } finally {
-            fileIS.close();
         }
         jarOS.closeEntry();
     }
@@ -383,11 +371,7 @@ public class DecompileAndAttachAction extends AnAction {
             e.setCrc(0);
         }
         jarOS.putNextEntry(e);
-        try {
-            FileUtil.copy(raw.getInputStream(), jarOS);
-        } finally {
-
-        }
+        FileUtil.copy(raw.getInputStream(), jarOS);
         jarOS.closeEntry();
     }
 

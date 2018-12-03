@@ -28,6 +28,9 @@ Don't expect perfection. It's a good decompiler, but can't reproduce original so
 Changlog
 --------
 
+**1.8.4 rferguson 12/03/2018**
+* rebuilt for 2018.3
+
 **1.8.2 rferguson 09/22/2018**
 
 * Added java-decompiler plugin dependency to build.gradle plugin.xml.
