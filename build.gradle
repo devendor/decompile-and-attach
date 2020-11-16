@@ -1,11 +1,11 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.3.7'
+    id 'org.jetbrains.intellij' version '0.6.3'
 }
 
 
 group 'com.devendortech.intellij'
-version '1.8.4'
+version '1.8.5'
 
 sourceCompatibility = 1.8
 
@@ -14,18 +14,21 @@ repositories {
 }
 
 dependencies {
-
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 intellij {
-    version '2018.3'
-    plugins 'java-decompiler'
+    version '2020.2'
+    plugins = ['java', 'java-decompiler']
 }
 
 patchPluginXml {
     // Pulled from rendored .rst
     changeNotes """
+    <p><strong>1.8.5 rferguson 11/16/2020</strong></p>
+    <ul class="simple">
+    <li>Rebuild for 2020.2</li>
+    </ul>
     <p><strong>1.8.4 rferguson 12/03/2018</strong></p>
     <ul class="simple">
     <li>Rebuild for 2018.3</li>
@@ -92,5 +95,4 @@ patchPluginXml {
     <ul class="simple">
     <li>fixes</li>
     </ul>"""
-
 }
